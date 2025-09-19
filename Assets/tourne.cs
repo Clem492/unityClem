@@ -1,7 +1,10 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class tourne : MonoBehaviour
 {
+    public Material mat;
+    public Material color;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,5 +15,14 @@ public class tourne : MonoBehaviour
     void Update()
     {
         gameObject.transform.Rotate(Vector3.up);
+        
+    }
+    private void OnMouseEnter()
+    {
+        gameObject.GetComponent<Renderer>().material = mat;
+    }
+    private void OnMouseExit()
+    {
+        gameObject.GetComponent<Renderer>().material = color;
     }
 }
